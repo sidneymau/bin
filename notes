@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+NOTE_DIR="${HOME}/notes"
+mkdir -p -v ${NOTE_DIR}
+# INDEX_FILE="${NOTE_DIR}/.index.md"
+
+# pushd ${NOTE_DIR} > /dev/null
+# printf '# Notes Index\n' > ${INDEX_FILE}
+# # printf '===========\n' >> ${INDEX_FILE}
+# 
+# # printf '\t- [[%s]]\n' * >> ${INDEX_FILE}
+# 
+# for f in *; do
+#     if [ -d "$f" ]; then
+#         printf '\t- [[%s/]]\n' "$f" >> ${INDEX_FILE}
+#     else
+#         printf '\t- [[%s]]\n' "$f" >> ${INDEX_FILE}
+#     fi
+# done
+# 
+# popd > /dev/null
+
+
+# "${EDITOR:-vi}" ${INDEX_FILE}
+
+"${EDITOR:-vi}" ${NOTE_DIR}
