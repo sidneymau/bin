@@ -10,7 +10,6 @@ scripts=(
 
 for script in "${scripts[@]}"; do
 	if [[ -L $__bin/$script ]]; then
-		# echo "skipping $script"
 		target=$(readlink -fv $script)
 		printf "'%s' is '%s'\n" "$__bin/$script" "$target"
 	else
