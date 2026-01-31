@@ -1,6 +1,7 @@
 #/usr/bin/env bash
 
 __bin=$HOME/bin
+mkdir -p -v ${__bin}
 
 scripts=(
 	journal
