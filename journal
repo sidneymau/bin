@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-JOURNAL_DIR="${HOME}/journals"
-mkdir -p -v ${JOURNAL_DIR}
-JOURNAL_FILE="${JOURNAL_DIR}/$(date +%F).md"
+__journal_dir="${HOME}/journals"
+mkdir -p -v ${__journal_dir}
+__journal_file="${__journal_dir}/$(date +%F).md"
 
-# printf -- '- %s: \n' "$(date '+%r')" >> ${JOURNAL_FILE}
+# printf -- '- %s: \n' "$(date '+%r')" >> ${__journal_file}
 
-"${EDITOR:-vi}" "${JOURNAL_FILE}"
+"${EDITOR:-vi}" "${__journal_file}"
