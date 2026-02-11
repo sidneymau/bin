@@ -6,4 +6,6 @@ __journal_file="${__journal_dir}/$(date +%F).md"
 
 # printf -- '- %s: \n' "$(date '+%r')" >> ${__journal_file}
 
+pushd ${__journal_dir} > /dev/null
 "${EDITOR:-vi}" "${__journal_file}"
+popd > /dev/null
