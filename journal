@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
+dateoptions="$@"
+
 __journal_dir="${HOME}/journals"
 mkdir -p -v ${__journal_dir}
-__journal_file="${__journal_dir}/$(date +%F).md"
-
-# printf -- '- %s: \n' "$(date '+%r')" >> ${__journal_file}
+__journal_file="${__journal_dir}/$(date -d "$dateoptions" +%F).md"
 
 pushd ${__journal_dir} > /dev/null
 "${EDITOR:-vi}" "${__journal_file}"
