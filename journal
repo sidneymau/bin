@@ -1,11 +1,21 @@
 #!/usr/bin/env bash
 
-dateoptions="$@"
-
 __journal_dir="${HOME}/journals"
 mkdir -p -v ${__journal_dir}
-__journal_file="${__journal_dir}/$(date -d "$dateoptions" +%F).md"
+
+__journal_files=()
+for arg in "$@"; do
+	__date_file="$(date -d "$arg" +%F).md"
+	__journal_file="${__journal_dir}/${__date_file}"
+	__journal_files+=("${__journal_file}")
+done
+
+if [ ${#__journal_files[@]} -eq 0 ]; then
+	__date_file="$(date -d "$dateoptions" +%F).md"
+	__journal_file="${__journal_dir}/${__date_file}"
+	__journal_files=("${__journal_file}")
+fi
 
 pushd ${__journal_dir} > /dev/null
-"${EDITOR:-vi}" "${__journal_file}"
+"${EDITOR:-vi}" "${__journal_files[@]}"
 popd > /dev/null
