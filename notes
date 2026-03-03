@@ -2,26 +2,6 @@
 
 __note_dir="${HOME}/notes"
 mkdir -p -v ${__note_dir}
-# __index_file="${__note_dir}/.index.md"
-
-# pushd ${__note_dir} > /dev/null
-# printf '# Notes Index\n' > ${__index_file}
-# # printf '===========\n' >> ${__index_file}
-# 
-# # printf '\t- [[%s]]\n' * >> ${__index_file}
-# 
-# for f in *; do
-#     if [ -d "$f" ]; then
-#         printf '\t- [[%s/]]\n' "$f" >> ${__index_file}
-#     else
-#         printf '\t- [[%s]]\n' "$f" >> ${__index_file}
-#     fi
-# done
-# 
-# popd > /dev/null
-
-
-# "${EDITOR:-vi}" ${__index_file}
 
 pushd ${__note_dir} > /dev/null
 "${EDITOR:-vi}" ${__note_dir}
