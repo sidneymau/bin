@@ -6,3 +6,5 @@ mkdir -p -v ${__note_dir}
 pushd ${__note_dir} > /dev/null
 "${EDITOR:-vi}" ${__note_dir}
 popd > /dev/null
+
+exit 0

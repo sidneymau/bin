@@ -5,7 +5,8 @@ mkdir -p -v ${__journal_dir}
 
 __journal_files=()
 for arg in "$@"; do
-	__date_file="$(date -d "$arg" +%F).md"
+	__date=$(date -d "$arg" +%F) || exit 1
+	__date_file="${__date}.md"
 	__journal_file="${__journal_dir}/${__date_file}"
 	__journal_files+=("${__journal_file}")
 done
@@ -19,3 +20,5 @@ fi
 pushd ${__journal_dir} > /dev/null
 "${EDITOR:-vi}" "${__journal_files[@]}"
 popd > /dev/null
+
+exit 0
