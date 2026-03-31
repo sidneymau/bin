@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+
+__todo_file="${HOME}/todo.md"
+
+pushd ${HOME} > /dev/null
+"${EDITOR:-vi}" "${__todo_file}"
+popd > /dev/null
+
+exit 0

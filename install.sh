@@ -6,6 +6,7 @@ mkdir -p -v ${__bin}
 scripts=(
 	journal
 	notes
+	todo
 )
 
 for script in "${scripts[@]}"; do
